@@ -1,0 +1,11 @@
+fieldset {
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+label {
+  display: flex;
+}
+button {
+  display: flex;
+}

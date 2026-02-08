@@ -18,7 +18,7 @@
   }
 }
 .container-timer {
-min-width: 320px;
+  min-width: 320px;
   max-width: 375px;
 
   padding: 0 16px;
