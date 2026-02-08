@@ -4,6 +4,7 @@ import 'flatpickr/dist/flatpickr.min.css';
 import 'izitoast/dist/css/iziToast.min.css';
 
 const startBtn = document.querySelector('[data-start]');
+const dateInput = document.querySelector('#datetime-picker'); // ✅ інпут
 startBtn.disabled = true;
 
 let selectedDate = null;
@@ -16,7 +17,7 @@ const timerElements = {
   seconds: document.querySelector('[data-seconds]'),
 };
 
-flatpickr('#datetime-picker', {
+flatpickr(dateInput, {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
@@ -41,6 +42,7 @@ startBtn.addEventListener('click', onStartBtnClick);
 
 function onStartBtnClick() {
   startBtn.disabled = true;
+  dateInput.disabled = true;
   updateTimer();
 }
 
@@ -51,6 +53,9 @@ function updateTimer() {
     if (deltaTime <= 0) {
       clearInterval(timerId);
       updateTimerDisplay({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+      dateInput.disabled = false;
+      startBtn.disabled = true;
 
       iziToast.success({
         message: 'Countdown finished!',
