@@ -1,5 +1,6 @@
-
 import flatpickr from "flatpickr";
+import "flatpickr/dist/flatpickr.min.css";
+
 
 const options = {
   enableTime: true,
@@ -10,4 +11,4 @@ const options = {
     console.log(selectedDates[0]);
   },
 };
-flatpickr("input#datetime-picker", {options});
+flatpickr("#datetime-picker", {options});
