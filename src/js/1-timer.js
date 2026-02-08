@@ -4,7 +4,8 @@ import 'flatpickr/dist/flatpickr.min.css';
 import 'izitoast/dist/css/iziToast.min.css';
 
 const startBtn = document.querySelector('[data-start]');
-const dateInput = document.querySelector('#datetime-picker'); // ✅ інпут
+const dateInput = document.querySelector('#datetime-picker');
+
 startBtn.disabled = true;
 
 let selectedDate = null;
@@ -43,10 +44,10 @@ startBtn.addEventListener('click', onStartBtnClick);
 function onStartBtnClick() {
   startBtn.disabled = true;
   dateInput.disabled = true;
-  updateTimer();
+  startCountdown();
 }
 
-function updateTimer() {
+function startCountdown() {
   timerId = setInterval(() => {
     const deltaTime = selectedDate - new Date();
 
