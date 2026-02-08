@@ -1,0 +1,25 @@
+.timer{
+display: flex;
+gap: 20px;
+
+}
+.field{
+display: flex;
+flex-direction: column;
+}
+.value{
+
+}
+.label{
+
+}
+#datetime-picker{
+    border: 1px solid #808080 ;
+    margin-bottom: 20px;
+}
+#datetime-picker:hover,
+#datetime-picker:focus,
+#datetime-picker:focus-visible
+{
+    border: 1px solid #483D8B ;
+}
